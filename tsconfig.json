@@ -1,0 +1,5 @@
+{
+  "extends": "@react-native/typescript-config",
+  "jsx": "react",
+  "types": ["react"]
+}

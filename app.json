@@ -1,0 +1,16 @@
+{
+  "name": "Sync Calm",
+  "displayName": "Sync Calm",
+  "expo": {
+    "plugins": [
+      [
+        "@sentry/react-native/expo",
+        {
+          "url": "https://sentry.io/",
+          "project": "Sync Calm",
+          "organization": "evoqins-wa"
+        }
+      ]
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "files": ["**/*.{js,jsx,ts,tsx,md}"],
+  "dictionary": ["react", "typescript", "eslint", "jest"],
+  "ignore": ["node_modules/**", "dist/**", "build/**"]
+}
