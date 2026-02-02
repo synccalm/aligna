@@ -1,7 +1,9 @@
 apply plugin: "com.android.application"
+apply from: project(':react-native-config').projectDir.getPath() + "/dotenv.gradle"
 apply plugin: "org.jetbrains.kotlin.android"
 apply plugin: "com.facebook.react"
-// apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.firebase.crashlytics'
 // apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 
 /**
@@ -61,6 +63,11 @@ react {
  */
 def enableProguardInReleaseBuilds = false
 
+project.ext.envConfigFiles = [
+    debug:  ".env", 
+    release: ".env.production"
+]
+
 /**
  * The preferred build flavor of JavaScriptCore (JSC)
  *
@@ -80,13 +87,17 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.synccalm"
+    namespace "com.fundsapp"
     defaultConfig {
-        applicationId "com.synccalm"
+        applicationId "com.fundsapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+            manifestPlaceholders = [
+        onesignal_app_id: "4664db0e-2544-4ab6-a23f-7461fd345d43",
+        onesignal_google_project_number: "REMOTE"
+    ]
 
         
     }
@@ -98,6 +109,12 @@ android {
             keyPassword 'android'
         }
         release {
+            // if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
+            //     storeFile file(MYAPP_UPLOAD_STORE_FILE)
+            //       storePassword 'fundsapp' 
+            //     keyAlias 'my-upload-key'
+            //     keyPassword 'fundsapp'
+            // }
             storeFile file('debug.keystore')
             storePassword 'android'
             keyAlias 'androiddebugkey'
@@ -114,6 +131,11 @@ buildTypes {
             shrinkResources false
         signingConfig signingConfigs.release
         proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
+        // ✅ Add this block to skip mapping upload during build
+        firebaseCrashlytics {
+            mappingFileUploadEnabled false
+        }
     }
 }
 }
@@ -121,6 +143,9 @@ buildTypes {
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
     implementation("com.facebook.react:react-android")
+implementation(platform("com.google.firebase:firebase-bom:34.3.0"))
+implementation("com.google.firebase:firebase-analytics")
+        implementation("com.google.firebase:firebase-crashlytics-ndk")
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")

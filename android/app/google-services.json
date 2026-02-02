@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "733117472969",
+    "project_id": "fundsapp-56f68",
+    "storage_bucket": "fundsapp-56f68.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:733117472969:android:1eb99a951111b507162d18",
+        "android_client_info": {
+          "package_name": "com.fundsapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "733117472969-jocji6qfghbfnbink356ntih0eljrp3g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fundsapp",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "733117472969-na4c80todeuicsi9cg3pqnf1u52q3b06.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA-XxSzKihtOhzm1Txq2IQqvN4IS_3LVMQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "733117472969-na4c80todeuicsi9cg3pqnf1u52q3b06.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
