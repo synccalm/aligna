@@ -11,7 +11,7 @@ import { useNavigation, useRoute, RouteProp } from '@react-navigation/native';
 import { launchImageLibrary } from 'react-native-image-picker';
 import CalendarPicker from 'react-native-calendar-picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
-import PushNotification from 'react-native-push-notification';
+// import PushNotification from 'react-native-push-notification';
 
 import { Styles, COLORS } from '../../../Theme';
 import { myEdges } from '../../../Helper/type-models';
@@ -202,15 +202,15 @@ export default function CreateWishlist(): React.JSX.Element {
         // If PushNotification is linked, we can use it.
         const id = Math.floor(Math.random() * 100000).toString();
 
-        PushNotification.localNotificationSchedule({
-            id: id,
-            channelId: "wishlist-channel",
-            title: "Wishlist Reminder",
-            message: `Time to work on: ${title}`,
-            date: date,
-            repeatType: 'day', // Daily
-            allowWhileIdle: true,
-        });
+        // PushNotification.localNotificationSchedule({
+        //     id: id,
+        //     channelId: "wishlist-channel",
+        //     title: "Wishlist Reminder",
+        //     message: `Time to work on: ${title}`,
+        //     date: date,
+        //     repeatType: 'day', // Daily
+        //     allowWhileIdle: true,
+        // });
 
         return id;
     };

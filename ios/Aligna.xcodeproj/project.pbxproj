@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		00F17F2E58A9913F5D8A5CBC /* Pods_fundsapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8A12E30E563D282B96F5BE /* Pods_fundsapp.framework */; };
+		00F17F2E58A9913F5D8A5CBC /* Pods_aligna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9D8A12E30E563D282B96F5BE /* Pods_aligna.framework */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
@@ -15,15 +15,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		13B07F961A680F5B00A75B9A /* SyncCalm.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SyncCalm.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "SyncCalm/Images.xcassets"; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "SyncCalm/Info.plist"; sourceTree = "<group>"; };
-		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = SyncCalm/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
-		3618E72ECCC5FFC1FF065F26 /* Pods-SyncCalm.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SyncCalm.release.xcconfig"; path = "Target Support Files/Pods-SyncCalm/Pods-SyncCalm.release.xcconfig"; sourceTree = "<group>"; };
-		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = SyncCalm/AppDelegate.swift; sourceTree = "<group>"; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = "SyncCalm/LaunchScreen.storyboard"; sourceTree = "<group>"; };
-		9D8A12E30E563D282B96F5BE /* Pods_fundsapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fundsapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A14408A88C087A45954CA580 /* Pods-SyncCalm.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SyncCalm.debug.xcconfig"; path = "Target Support Files/Pods-SyncCalm/Pods-SyncCalm.debug.xcconfig"; sourceTree = "<group>"; };
+		13B07F961A680F5B00A75B9A /* Aligna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Aligna.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = "Aligna/Images.xcassets"; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = "Aligna/Info.plist"; sourceTree = "<group>"; };
+		13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = PrivacyInfo.xcprivacy; path = Aligna/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		3618E72ECCC5FFC1FF065F26 /* Pods-Aligna.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aligna.release.xcconfig"; path = "Target Support Files/Pods-Aligna/Pods-Aligna.release.xcconfig"; sourceTree = "<group>"; };
+		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Aligna/AppDelegate.swift; sourceTree = "<group>"; };
+		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = "Aligna/LaunchScreen.storyboard"; sourceTree = "<group>"; };
+		9D8A12E30E563D282B96F5BE /* Pods_aligna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_aligna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A14408A88C087A45954CA580 /* Pods-Aligna.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aligna.debug.xcconfig"; path = "Target Support Files/Pods-Aligna/Pods-Aligna.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -32,14 +32,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				00F17F2E58A9913F5D8A5CBC /* Pods_fundsapp.framework in Frameworks */,
+				00F17F2E58A9913F5D8A5CBC /* Pods_aligna.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		13B07FAE1A68108700A75B9A /* SyncCalm */ = {
+		13B07FAE1A68108700A75B9A /* Aligna */ = {
 			isa = PBXGroup;
 			children = (
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -48,14 +48,14 @@
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
 			);
-			name = "SyncCalm";
+			name = "Aligna";
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				9D8A12E30E563D282B96F5BE /* Pods_fundsapp.framework */,
+				9D8A12E30E563D282B96F5BE /* Pods_aligna.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -70,7 +70,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				13B07FAE1A68108700A75B9A /* SyncCalm */,
+				13B07FAE1A68108700A75B9A /* Aligna */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
@@ -84,7 +84,7 @@
 		83CBBA001A601CBA00E9B192 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				13B07F961A680F5B00A75B9A /* SyncCalm.app */,
+				13B07F961A680F5B00A75B9A /* Aligna.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -92,8 +92,8 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				A14408A88C087A45954CA580 /* Pods-SyncCalm.debug.xcconfig */,
-				3618E72ECCC5FFC1FF065F26 /* Pods-SyncCalm.release.xcconfig */,
+				A14408A88C087A45954CA580 /* Pods-Aligna.debug.xcconfig */,
+				3618E72ECCC5FFC1FF065F26 /* Pods-Aligna.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -101,9 +101,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		13B07F861A680F5B00A75B9A /* SyncCalm */ = {
+		13B07F861A680F5B00A75B9A /* Aligna */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SyncCalm" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Aligna" */;
 			buildPhases = (
 				9A8029261ECFC98DBAC89A8B /* [CP] Check Pods Manifest.lock */,
 				13B07F871A680F5B00A75B9A /* Sources */,
@@ -120,9 +120,9 @@
 			);
 			dependencies = (
 			);
-			name = "SyncCalm";
-			productName = "SyncCalm";
-			productReference = 13B07F961A680F5B00A75B9A /* SyncCalm.app */;
+			name = "Aligna";
+			productName = "Aligna";
+			productReference = 13B07F961A680F5B00A75B9A /* Aligna.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -138,7 +138,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "SyncCalm" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Aligna" */;
 			compatibilityVersion = "Xcode 12.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -151,7 +151,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* SyncCalm */,
+				13B07F861A680F5B00A75B9A /* Aligna */,
 			);
 		};
 /* End PBXProject section */
@@ -206,15 +206,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SyncCalm/Pods-SyncCalm-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Aligna/Pods-Aligna-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SyncCalm/Pods-SyncCalm-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Aligna/Pods-Aligna-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SyncCalm/Pods-SyncCalm-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Aligna/Pods-Aligna-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		9A8029261ECFC98DBAC89A8B /* [CP] Check Pods Manifest.lock */ = {
@@ -232,7 +232,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SyncCalm-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Aligna-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -259,15 +259,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SyncCalm/Pods-SyncCalm-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Aligna/Pods-Aligna-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SyncCalm/Pods-SyncCalm-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Aligna/Pods-Aligna-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SyncCalm/Pods-SyncCalm-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Aligna/Pods-Aligna-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EB097BE2EAE0D58624DAAF3A /* [CP-User] [RNFB] Core Configuration */ = {
@@ -299,16 +299,16 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A14408A88C087A45954CA580 /* Pods-SyncCalm.debug.xcconfig */;
+			baseConfigurationReference = A14408A88C087A45954CA580 /* Pods-Aligna.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VCK7K95PP5;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = "SyncCalm/Info.plist";
-             INFOPLIST_KEY_CFBundleDisplayName = "Sync Calm";
-				INFOPLIST_KEY_CFBundleDisplayName = SyncCalm;
+				INFOPLIST_FILE = "Aligna/Info.plist";
+             INFOPLIST_KEY_CFBundleDisplayName = "Aligna";
+				INFOPLIST_KEY_CFBundleDisplayName = Aligna;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -320,8 +320,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.synccalm";
-				PRODUCT_NAME = "SyncCalm";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.synccalm.aligna";
+				PRODUCT_NAME = "Aligna";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -330,15 +330,15 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3618E72ECCC5FFC1FF065F26 /* Pods-SyncCalm.release.xcconfig */;
+			baseConfigurationReference = 3618E72ECCC5FFC1FF065F26 /* Pods-Aligna.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VCK7K95PP5;
-				INFOPLIST_FILE = "SyncCalm/Info.plist";
-             INFOPLIST_KEY_CFBundleDisplayName = "Sync Calm";
-				INFOPLIST_KEY_CFBundleDisplayName = SyncCalm;
+				INFOPLIST_FILE = "Aligna/Info.plist";
+             INFOPLIST_KEY_CFBundleDisplayName = "Aligna";
+				INFOPLIST_KEY_CFBundleDisplayName = Aligna;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -350,8 +350,8 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.synccalm";
-				PRODUCT_NAME = "SyncCalm";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.synccalm.aligna";
+				PRODUCT_NAME = "Aligna";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -534,7 +534,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "SyncCalm" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "Aligna" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -543,7 +543,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "SyncCalm" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "Aligna" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,

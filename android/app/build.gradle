@@ -87,9 +87,9 @@ android {
     buildToolsVersion rootProject.ext.buildToolsVersion
     compileSdk rootProject.ext.compileSdkVersion
 
-    namespace "com.fundsapp"
+    namespace "com.synccalm.aligna"
     defaultConfig {
-        applicationId "com.fundsapp"
+        applicationId "com.synccalm.aligna"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -111,9 +111,9 @@ android {
         release {
             // if (project.hasProperty('MYAPP_UPLOAD_STORE_FILE')) {
             //     storeFile file(MYAPP_UPLOAD_STORE_FILE)
-            //       storePassword 'fundsapp' 
+            //       storePassword 'aligna' 
             //     keyAlias 'my-upload-key'
-            //     keyPassword 'fundsapp'
+            //     keyPassword 'aligna'
             // }
             storeFile file('debug.keystore')
             storePassword 'android'

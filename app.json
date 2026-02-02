@@ -1,13 +1,13 @@
 {
-  "name": "Sync Calm",
-  "displayName": "Sync Calm",
+  "name": "Aligna",
+  "displayName": "Aligna",
   "expo": {
     "plugins": [
       [
         "@sentry/react-native/expo",
         {
           "url": "https://sentry.io/",
-          "project": "Sync Calm",
+          "project": "Aligna",
           "organization": "evoqins-wa"
         }
       ]

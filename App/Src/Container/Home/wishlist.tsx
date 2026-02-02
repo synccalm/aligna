@@ -15,7 +15,7 @@ import { Styles, COLORS } from '../../../Theme';
 import { Icon } from '../../../Navigator/router';
 import { scaleWidth } from '../../../Helper/responsive';
 import { StorageHelper, WishlistItem } from '../../../Helper/storage';
-import PushNotification from 'react-native-push-notification';
+// import PushNotification from 'react-native-push-notification';
 
 type RootStackParamList = {
     'create-wishlist': { item?: WishlistItem } | undefined;

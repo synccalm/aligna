@@ -31,7 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Create and start the main window
     window = UIWindow(frame: UIScreen.main.bounds)
     factory.startReactNative(
-      withModuleName: "Sync Calm",
+      withModuleName: "Aligna",
       in: window,
       launchOptions: launchOptions
     )

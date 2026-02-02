@@ -1,7 +1,7 @@
 {
   "servers": {
     "Sentry": {
-      "url": "https://mcp.sentry.dev/mcp/evoqins-wa/fundsapp",
+      "url": "https://mcp.sentry.dev/mcp/evoqins-wa/aligna",
       "type": "http"
     }
   }

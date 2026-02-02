@@ -140,7 +140,7 @@ module.exports = {
           'kyc',
           'ruppee',
           'Periwingle',
-          'fundsapp',
+          'aligna',
           'Sor',
           'Upi',
           'phonepe',

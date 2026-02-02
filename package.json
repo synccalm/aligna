@@ -1,5 +1,5 @@
 {
-  "name": "synccalm",
+  "name": "aligna",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -51,7 +51,6 @@
     "react-native-linear-gradient": "^2.8.3",
     "react-native-onesignal": "^5.2.13",
     "react-native-orientation-locker": "^1.7.0",
-    "react-native-push-notification": "^8.1.1",
     "react-native-radial-gradient": "^1.2.1",
     "react-native-reanimated": "3.18.0",
     "react-native-reanimated-carousel": "^4.0.3",

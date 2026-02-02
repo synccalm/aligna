@@ -234,7 +234,7 @@ const SetPin: React.FC = () => {
                       Styles.colorIronSideGrey,
                     ]}
                   >
-                    Use your device’s biometric lock to login to the FundsApp with bease
+                    Use your device’s biometric lock to login to the aligna with bease
                   </Text>
                 </View>
 
