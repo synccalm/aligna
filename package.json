@@ -12,8 +12,6 @@
     "typo": "typo"
   },
   "dependencies": {
-    "@aws-amplify/react-native": "^1.2.0",
-    "@aws-amplify/storage": "^6.10.0",
     "@ptomasroos/react-native-multi-slider": "^2.2.2",
     "@react-native-async-storage/async-storage": "^2.2.0",
     "@react-native-community/blur": "^4.4.1",
@@ -25,7 +23,6 @@
     "@react-navigation/native": "^7.1.11",
     "@react-navigation/stack": "^7.3.4",
     "@sbaiahmed1/react-native-biometrics": "^0.11.0",
-    "@sentry/react-native": "^7.4.0",
     "@types/react-native-push-notification": "^8.1.4",
     "aws-amplify": "^6.15.7",
     "axios": "^1.12.2",

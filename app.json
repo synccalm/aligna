@@ -1,16 +1,4 @@
 {
   "name": "Aligna",
-  "displayName": "Aligna",
-  "expo": {
-    "plugins": [
-      [
-        "@sentry/react-native/expo",
-        {
-          "url": "https://sentry.io/",
-          "project": "Aligna",
-          "organization": "evoqins-wa"
-        }
-      ]
-    ]
-  }
+  "displayName": "Aligna"
 }

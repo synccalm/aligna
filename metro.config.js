@@ -1,13 +1,9 @@
-const { mergeConfig } = require('@react-native/metro-config');
+const { getDefaultConfig, mergeConfig } = require('@react-native/metro-config');
 
-const { getSentryExpoConfig } = require('@sentry/react-native/metro');
+const defaultConfig = getDefaultConfig(__dirname);
 
-/**
- * Metro configuration
- * https://reactnative.dev/docs/metro
- *
- * @type {import('@react-native/metro-config').MetroConfig}
- */
-const config = {};
+const config = {
+  // your overrides go here (if any)
+};
 
-module.exports = mergeConfig(getSentryExpoConfig(__dirname), config);
+module.exports = mergeConfig(defaultConfig, config);
