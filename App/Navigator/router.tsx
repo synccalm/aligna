@@ -214,13 +214,6 @@ function SignUpStack() {
         }}
       />
       <Stack.Screen
-        name="verify-otp"
-        component={VerifyOtp}
-        options={{
-          headerShown: false,
-        }}
-      />
-      <Stack.Screen
         name="verify-pin"
         component={VerifyPin}
         options={{
@@ -519,7 +512,7 @@ const App: React.FC = () => {
             ) : (
               <SignInStack />
             ))} */}
-          <SignInStack />
+            <SignUpStack />
         </NavigationContainer>
 
         <Toast
