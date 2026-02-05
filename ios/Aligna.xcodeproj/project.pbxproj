@@ -16,7 +16,6 @@
 		189AFA562F3511E80089B2EE /* Roboto-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 189AFA4C2F3511E80089B2EE /* Roboto-SemiBold.ttf */; };
 		189AFA572F3511E80089B2EE /* Rubik-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 189AFA4F2F3511E80089B2EE /* Rubik-Medium.ttf */; };
 		189AFA582F3511E80089B2EE /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 189AFA502F3511E80089B2EE /* Rubik-Regular.ttf */; };
-		189AFA592F3511E80089B2EE /* Rubik-Bold.textClipping in Resources */ = {isa = PBXBuildFile; fileRef = 189AFA4D2F3511E80089B2EE /* Rubik-Bold.textClipping */; };
 		189AFA5A2F3511E80089B2EE /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 189AFA512F3511E80089B2EE /* Rubik-SemiBold.ttf */; };
 		189AFA5B2F3511E80089B2EE /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 189AFA4E2F3511E80089B2EE /* Rubik-Bold.ttf */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
@@ -34,7 +33,6 @@
 		189AFA4A2F3511E80089B2EE /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
 		189AFA4B2F3511E80089B2EE /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		189AFA4C2F3511E80089B2EE /* Roboto-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-SemiBold.ttf"; sourceTree = "<group>"; };
-		189AFA4D2F3511E80089B2EE /* Rubik-Bold.textClipping */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "Rubik-Bold.textClipping"; sourceTree = "<group>"; };
 		189AFA4E2F3511E80089B2EE /* Rubik-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Bold.ttf"; sourceTree = "<group>"; };
 		189AFA4F2F3511E80089B2EE /* Rubik-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Medium.ttf"; sourceTree = "<group>"; };
 		189AFA502F3511E80089B2EE /* Rubik-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-Regular.ttf"; sourceTree = "<group>"; };
@@ -62,16 +60,7 @@
 		13B07FAE1A68108700A75B9A /* Aligna */ = {
 			isa = PBXGroup;
 			children = (
-				189AFA482F3511E80089B2EE /* icomoon.ttf */,
-				189AFA492F3511E80089B2EE /* Roboto-Bold.ttf */,
-				189AFA4A2F3511E80089B2EE /* Roboto-Medium.ttf */,
-				189AFA4B2F3511E80089B2EE /* Roboto-Regular.ttf */,
-				189AFA4C2F3511E80089B2EE /* Roboto-SemiBold.ttf */,
-				189AFA4D2F3511E80089B2EE /* Rubik-Bold.textClipping */,
-				189AFA4E2F3511E80089B2EE /* Rubik-Bold.ttf */,
-				189AFA4F2F3511E80089B2EE /* Rubik-Medium.ttf */,
-				189AFA502F3511E80089B2EE /* Rubik-Regular.ttf */,
-				189AFA512F3511E80089B2EE /* Rubik-SemiBold.ttf */,
+				189AFA472F3511E80089B2EC /* Fonts */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				761780EC2CA45674006654EE /* AppDelegate.swift */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
@@ -79,6 +68,23 @@
 				13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */,
 			);
 			name = Aligna;
+			sourceTree = "<group>";
+		};
+		189AFA472F3511E80089B2EC /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				189AFA482F3511E80089B2EE /* icomoon.ttf */,
+				189AFA492F3511E80089B2EE /* Roboto-Bold.ttf */,
+				189AFA4A2F3511E80089B2EE /* Roboto-Medium.ttf */,
+				189AFA4B2F3511E80089B2EE /* Roboto-Regular.ttf */,
+				189AFA4C2F3511E80089B2EE /* Roboto-SemiBold.ttf */,
+				189AFA4E2F3511E80089B2EE /* Rubik-Bold.ttf */,
+				189AFA4F2F3511E80089B2EE /* Rubik-Medium.ttf */,
+				189AFA502F3511E80089B2EE /* Rubik-Regular.ttf */,
+				189AFA512F3511E80089B2EE /* Rubik-SemiBold.ttf */,
+			);
+			path = Aligna/Fonts;
+			name = Fonts;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -197,7 +203,6 @@
 				189AFA562F3511E80089B2EE /* Roboto-SemiBold.ttf in Resources */,
 				189AFA572F3511E80089B2EE /* Rubik-Medium.ttf in Resources */,
 				189AFA582F3511E80089B2EE /* Rubik-Regular.ttf in Resources */,
-				189AFA592F3511E80089B2EE /* Rubik-Bold.textClipping in Resources */,
 				189AFA5A2F3511E80089B2EE /* Rubik-SemiBold.ttf in Resources */,
 				189AFA5B2F3511E80089B2EE /* Rubik-Bold.ttf in Resources */,
 				FA1CBA464C87ABA1496E2511 /* PrivacyInfo.xcprivacy in Resources */,
