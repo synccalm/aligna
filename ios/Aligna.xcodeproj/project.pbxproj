@@ -18,10 +18,10 @@
 		189AFA582F3511E80089B2EE /* Rubik-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 189AFA502F3511E80089B2EE /* Rubik-Regular.ttf */; };
 		189AFA5A2F3511E80089B2EE /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 189AFA512F3511E80089B2EE /* Rubik-SemiBold.ttf */; };
 		189AFA5B2F3511E80089B2EE /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 189AFA4E2F3511E80089B2EE /* Rubik-Bold.ttf */; };
+		189AFA602F3523800089B2EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 189AFA5F2F3523800089B2EE /* GoogleService-Info.plist */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		FA1CBA464C87ABA1496E2511 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
-		189AFA602F3523800089B2EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 189AFA5F2F3523800089B2EE /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */

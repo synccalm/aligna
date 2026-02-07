@@ -47,8 +47,6 @@ import { Text } from 'react-native';
 // Correct path: '../Helper/storage'
 
 import { firebase } from "@react-native-firebase/app";
-import { appleAuth } from '@invertase/react-native-apple-authentication';
-import auth from '@react-native-firebase/auth';
 
 export const Icon = createIconSetFromIcoMoon(icoMoonConfig);
 
@@ -329,7 +327,12 @@ const App: React.FC = () => {
     LogBox.ignoreLogs(['Animated: `useNativeDriver`']);
   }, []);
 
-  useEffect(() => {
+  // --- Auto Lock Logic ---
+  const [appState, setAppState] = React.useState(AppState.currentState);
+  console.log("Current AppState Loop:", appState);
+
+
+   useEffect(() => {
         const firebaseConfig = {
             apiKey: "AIzaSyCeOkWg5wEjbJHNhJPFa-QTrcamV1qaUO4",
             authDomain: "synccalmaligna.firebaseapp.com",
@@ -339,19 +342,13 @@ const App: React.FC = () => {
             appId: "1:933201863300:ios:db24c2b754203e85cfd8d1",
         };
 
-        // Initialize Firebase only if not already initialized
-        if (Platform.OS === "ios") {
-            if (!firebase.apps.length) {
-                firebase.initializeApp(firebaseConfig);
-            } else {
-                firebase.app();
-            }
+        // Initialize Firebase only if not already initialized (iOS and Android)
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+        } else {
+            firebase.app();
         }
     }, []);
-
-  // --- Auto Lock Logic ---
-  const [appState, setAppState] = React.useState(AppState.currentState);
-  console.log("Current AppState Loop:", appState);
 
   useEffect(() => {
     const subscription = AppState.addEventListener('change', async (nextAppState) => {

@@ -1,4 +1,5 @@
 import UIKit
+import FirebaseCore
 import React
 import React_RCTAppDelegate
 import ReactAppDependencyProvider
@@ -21,6 +22,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     reactNativeDelegate = delegate
     reactNativeFactory = factory
+
+    FirebaseApp.configure()
 
     window = UIWindow(frame: UIScreen.main.bounds)
 
