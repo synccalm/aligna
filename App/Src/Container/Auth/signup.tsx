@@ -5,9 +5,11 @@
  * Version : v1.1
  */
 import React, { useRef, useState, useEffect, useContext } from 'react';
-import { View, Text, ImageBackground, ScrollView, TouchableOpacity, Image } from 'react-native';
+import { View, Text, ImageBackground, ScrollView, TouchableOpacity, Image, Platform } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import { appleAuth } from '@invertase/react-native-apple-authentication';
+import { getAuth, AppleAuthProvider, signInWithCredential } from '@react-native-firebase/auth';
 
 import { Styles } from '../../../Theme';
 import Images from '../../../Assets/Images';
@@ -29,6 +31,17 @@ const Signup: React.FC = () => {
   
 
   const _handleGooglebutton = async () => {
+
+     GoogleSignin.configure({
+            offlineAccess: true,
+            forceCodeForRefreshToken: true,
+            accountName: 'Aligna',
+            webClientId: '933201863300-pvqhjmsh6d1n63ac47bli42fgqekkgoe.apps.googleusercontent.com', // TODO  we need to change in production
+            iosClientId: '933201863300-pvqhjmsh6d1n63ac47bli42fgqekkgoe.apps.googleusercontent.com', // from GoogleService-Info.plist CLIENT_ID
+            // androidClientId: '477724491197-onttqmeomic4nlnhfecn6ksp613epj6s.apps.googleusercontent.com', // TODO  we need to change in production
+            scopes: ['profile', 'email']
+        });
+
     try {
       await GoogleSignin.hasPlayServices();
       const userInfo = await GoogleSignin.signIn();
@@ -38,6 +51,38 @@ const Signup: React.FC = () => {
       console.log('Google Sign-In Error:', error);
     }
   };
+
+  const _onAppleButtonPress = async () => {
+        try {
+            if (Platform.OS !== 'ios' || !appleAuth.isSupported) {
+                console.log('Apple Sign-In Not Supported', 'iOS 13+ only');
+                return;
+            }
+
+            const appleAuthRequestResponse = await appleAuth.performRequest({
+                requestedOperation: appleAuth.Operation.LOGIN,
+                requestedScopes: [appleAuth.Scope.FULL_NAME, appleAuth.Scope.EMAIL],
+            });
+
+            if (!appleAuthRequestResponse.identityToken) {
+                return
+            }
+            console.log("appleAuthRequestResponse", appleAuthRequestResponse)
+
+            const { identityToken, nonce } = appleAuthRequestResponse;
+            const appleCredential = AppleAuthProvider.credential(identityToken, nonce);
+
+            let response = await signInWithCredential(getAuth(), appleCredential);
+            let user = response?.user;
+            let idToken = await user?.getIdToken();
+            console.log("resp ------", response)
+            console.log("resp ", idToken)
+
+
+        } catch (error: any) {
+            console.error('Apple Sign-In Error:', error);
+        }
+    };
 
   return (
     <SafeAreaView style={[Styles.flexGrowOne]} edges={myEdges}>
@@ -86,7 +131,7 @@ const Signup: React.FC = () => {
 
                <TouchableOpacity
                 // activeOpacity={0.8}
-                onPress={() => _handleGooglebutton()}
+                onPress={() => _onAppleButtonPress()}
                 style={[
                   Styles.marginTop16,
                   Styles.borderWidth2,

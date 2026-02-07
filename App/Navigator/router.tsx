@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { LogBox, View } from 'react-native';
+import { LogBox, Platform, View } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import Orientation from 'react-native-orientation-locker';
 import EncryptedStorage from 'react-native-encrypted-storage';
@@ -45,6 +45,10 @@ import Visualization from '../Src/Container/Visualization';
 import { Text } from 'react-native';
 // Actually router is in /App/Navigator. Storage is in /App/Helper.
 // Correct path: '../Helper/storage'
+
+import { firebase } from "@react-native-firebase/app";
+import { appleAuth } from '@invertase/react-native-apple-authentication';
+import auth from '@react-native-firebase/auth';
 
 export const Icon = createIconSetFromIcoMoon(icoMoonConfig);
 
@@ -324,6 +328,26 @@ const App: React.FC = () => {
     LogBox.ignoreAllLogs(true);
     LogBox.ignoreLogs(['Animated: `useNativeDriver`']);
   }, []);
+
+  useEffect(() => {
+        const firebaseConfig = {
+            apiKey: "AIzaSyCeOkWg5wEjbJHNhJPFa-QTrcamV1qaUO4",
+            authDomain: "synccalmaligna.firebaseapp.com",
+            projectId: "synccalmaligna",
+            storageBucket: "synccalmaligna.firebasestorage.app",
+            messagingSenderId: "",
+            appId: "1:933201863300:ios:db24c2b754203e85cfd8d1",
+        };
+
+        // Initialize Firebase only if not already initialized
+        if (Platform.OS === "ios") {
+            if (!firebase.apps.length) {
+                firebase.initializeApp(firebaseConfig);
+            } else {
+                firebase.app();
+            }
+        }
+    }, []);
 
   // --- Auto Lock Logic ---
   const [appState, setAppState] = React.useState(AppState.currentState);
