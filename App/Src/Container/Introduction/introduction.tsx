@@ -2,7 +2,7 @@ import React, { useContext, useState, useRef } from 'react';
 import { View, Text, TouchableOpacity, Dimensions, StyleSheet, StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Carousel from 'react-native-reanimated-carousel';
-import Animated, { useAnimatedStyle, useSharedValue, withSpring, interpolate, Extrapolate } from 'react-native-reanimated';
+import Animated, { useAnimatedStyle, useSharedValue, withSpring, interpolate, Extrapolate, withTiming } from 'react-native-reanimated';
 
 // manual imports
 import { Styles, COLORS } from '../../../Theme';
@@ -46,6 +46,37 @@ const ONBOARD_DATA = [
   },
 ];
 
+const PaginationDot = ({ isActive }: { isActive: boolean }) => {
+  const width = useSharedValue(8);
+  const opacity = useSharedValue(0.5);
+
+  React.useEffect(() => {
+    width.value = withSpring(isActive ? 24 : 8, { damping: 15, stiffness: 100 });
+    opacity.value = withTiming(isActive ? 1 : 0.5, { duration: 300 });
+  }, [isActive]);
+
+  const animatedStyle = useAnimatedStyle(() => {
+    return {
+      width: width.value,
+      opacity: opacity.value,
+      backgroundColor: isActive ? '#FFFFFF' : 'rgba(255, 255, 255, 0.5)',
+    };
+  });
+
+  return (
+    <Animated.View
+      style={[
+        {
+          height: 8,
+          borderRadius: 4,
+          marginHorizontal: 4,
+        },
+        animatedStyle,
+      ]}
+    />
+  );
+};
+
 const Introduction: React.FC = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const authContext = useContext(AuthContext);
@@ -84,7 +115,7 @@ const Introduction: React.FC = () => {
             height={windowHeight * 0.6}
             autoPlay={true}
             data={ONBOARD_DATA}
-            scrollAnimationDuration={1000}
+            scrollAnimationDuration={2000}
             onSnapToItem={(index) => setCurrentIndex(index)}
             renderItem={renderItem}
             mode="parallax" // Use parallax for premium feel
@@ -98,13 +129,7 @@ const Introduction: React.FC = () => {
         {/* Indicators */}
         <View style={localStyles.indicatorContainer}>
           {ONBOARD_DATA.map((_, index) => (
-            <View
-              key={index}
-              style={[
-                localStyles.indicator,
-                currentIndex === index ? localStyles.indicatorActive : null
-              ]}
-            />
+            <PaginationDot key={index} isActive={currentIndex === index} />
           ))}
         </View>
 
@@ -173,17 +198,6 @@ const localStyles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 32
-  },
-  indicator: {
-    width: 8,
-    height: 8,
-    borderRadius: 4,
-    backgroundColor: 'rgba(255, 255, 255, 0.3)',
-    marginHorizontal: 4
-  },
-  indicatorActive: {
-    backgroundColor: 'white',
-    width: 24
   },
   footer: {
     paddingHorizontal: 24,
