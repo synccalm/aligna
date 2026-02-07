@@ -21,6 +21,7 @@ import { Icon, AuthContext } from '../../../Navigator/router'; // Ensure this pa
 import { Styles, COLORS } from '../../../Theme';
 import auth from '@react-native-firebase/auth';
 import { GoogleSignin } from '@react-native-google-signin/google-signin';
+import EncryptedStorage from 'react-native-encrypted-storage';
 
 const { width } = Dimensions.get('window');
 
@@ -77,6 +78,16 @@ export default function Test(): React.JSX.Element {
             }
         }
     };
+
+    async function _clear() {
+        try {
+            await EncryptedStorage.clear();
+            console.log('Storage cleared');
+            if (signOut) signOut();
+        } catch (error) {
+            console.error('Error clearing storage:', error);
+        }
+    }
 
     return (
         <View style={Styles.flexOne}>
@@ -165,6 +176,13 @@ export default function Test(): React.JSX.Element {
                                 </TouchableOpacity>
                             ))}
                         </View>
+
+                        <TouchableOpacity onPress={() => _clear()}
+                            style={{ padding: 20, margin: 20 }}>
+                            <Text>
+                                Clear all store for Test
+                            </Text>
+                        </TouchableOpacity>
 
                         {/* 4. FOOTER */}
                         <View style={{ marginTop: 60, marginBottom: 100, alignItems: 'center', opacity: 0.4 }}>
