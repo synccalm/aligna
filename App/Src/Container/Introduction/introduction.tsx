@@ -43,10 +43,13 @@ const ONBOARD_DATA = [
 const Introduction: React.FC = () => {
   const [UIIndex, setUIIndex] = useState<number>(0);
 
-  const { signOut } = useContext<AuthContextProps>(AuthContext);
+  const authContext = useContext(AuthContext);
+  const finishIntro = authContext?.finishIntro;
 
   function _skip() {
-    signOut();
+    if (finishIntro) {
+      finishIntro();
+    }
   }
 
   return (

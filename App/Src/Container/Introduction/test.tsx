@@ -17,8 +17,10 @@ import {
 } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import LinearGradient from 'react-native-linear-gradient';
-import { Icon } from '../../../Navigator/router'; // Ensure this path is correct based on folder structure
+import { Icon, AuthContext } from '../../../Navigator/router'; // Ensure this path is correct based on folder structure
 import { Styles, COLORS } from '../../../Theme';
+import auth from '@react-native-firebase/auth';
+import { GoogleSignin } from '@react-native-google-signin/google-signin';
 
 const { width } = Dimensions.get('window');
 
@@ -27,14 +29,18 @@ const MENU_ITEMS = [
     { id: 'rate', title: 'Rate Us', icon: 'star' },
     { id: 'feedback', title: 'Feedback', icon: 'chat-bubble' }, // fallback icon name, check router
     { id: 'privacy', title: 'Privacy Policy', icon: 'info' },
-    { id: 'terms', title: 'Terms of Service', icon: 'order_icon'},
+    { id: 'terms', title: 'Terms of Service', icon: 'order_icon' },
     { id: 'about', title: 'About Us', icon: 'about_us' },
+    { id: 'logout', title: 'Logout', icon: 'logout' },
 ];
 
 export default function Test(): React.JSX.Element {
     // Animation for fade-in
     const fadeAnim = useRef(new Animated.Value(0)).current;
     const slideAnim = useRef(new Animated.Value(20)).current;
+
+    const authContext = React.useContext(AuthContext);
+    const signOut = authContext?.signOut;
 
     useEffect(() => {
         Animated.parallel([
@@ -51,11 +57,24 @@ export default function Test(): React.JSX.Element {
         ]).start();
     }, []);
 
-    const handlePress = (id: string) => {
+    const handlePress = async (id: string) => {
         // Placeholder for actions
         console.log(`Pressed ${id}`);
         if (id === 'rate') {
             // Linking.openURL(...) 
+        } else if (id === 'logout') {
+            try {
+                await auth().signOut();
+                try {
+                    await GoogleSignin.signOut();
+                } catch (e) {
+                    console.log('Google signout error (probably not signed in)', e);
+                }
+                if (signOut) signOut();
+            } catch (error) {
+                console.error('Logout error:', error);
+                if (signOut) signOut();
+            }
         }
     };
 
@@ -106,7 +125,7 @@ export default function Test(): React.JSX.Element {
                                 start={{ x: 0, y: 0 }}
                                 end={{ x: 1, y: 1 }}
                             />
-    
+
                             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 16 }}>
                                 <View style={{ padding: 10, backgroundColor: 'rgba(255,255,255,0.6)', borderRadius: 12 }}>
                                     <Icon name="dazzle" size={54} color="#8D6E63" />

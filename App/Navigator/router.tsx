@@ -198,11 +198,12 @@ function Tabs() {
 }
 
 interface AuthContextProps {
-  logIn: () => void;
-  signIn: () => void;
+  signIn: (token: string) => void;
+  finishIntro: () => void;
+  signOut: () => void;
 }
 
-export const AuthContext = React.createContext<AuthContextProps | null>();
+export const AuthContext = React.createContext<AuthContextProps | null>(null);
 
 // INLINE COMPONENT - Sign up
 function SignUpStack() {
@@ -332,23 +333,23 @@ const App: React.FC = () => {
   console.log("Current AppState Loop:", appState);
 
 
-   useEffect(() => {
-        const firebaseConfig = {
-            apiKey: "AIzaSyCeOkWg5wEjbJHNhJPFa-QTrcamV1qaUO4",
-            authDomain: "synccalmaligna.firebaseapp.com",
-            projectId: "synccalmaligna",
-            storageBucket: "synccalmaligna.firebasestorage.app",
-            messagingSenderId: "",
-            appId: "1:933201863300:ios:db24c2b754203e85cfd8d1",
-        };
+  useEffect(() => {
+    const firebaseConfig = {
+      apiKey: "AIzaSyCeOkWg5wEjbJHNhJPFa-QTrcamV1qaUO4",
+      authDomain: "synccalmaligna.firebaseapp.com",
+      projectId: "synccalmaligna",
+      storageBucket: "synccalmaligna.firebasestorage.app",
+      messagingSenderId: "",
+      appId: "1:933201863300:ios:db24c2b754203e85cfd8d1",
+    };
 
-        // Initialize Firebase only if not already initialized (iOS and Android)
-        if (!firebase.apps.length) {
-            firebase.initializeApp(firebaseConfig);
-        } else {
-            firebase.app();
-        }
-    }, []);
+    // Initialize Firebase only if not already initialized (iOS and Android)
+    if (!firebase.apps.length) {
+      firebase.initializeApp(firebaseConfig);
+    } else {
+      firebase.app();
+    }
+  }, []);
 
   useEffect(() => {
     const subscription = AppState.addEventListener('change', async (nextAppState) => {
@@ -440,6 +441,13 @@ const App: React.FC = () => {
             appInstallationStatus: true,
             unlock: false,
           };
+        case 'FINISH_INTRO':
+          return {
+            ...prevState,
+            appInstallationStatus: true,
+            isLoading: false,
+            unlock: true,
+          };
       }
     },
     {
@@ -486,11 +494,10 @@ const App: React.FC = () => {
 
         dispatch({ type: 'UNLOCK', unlock: true, token: refresh_token });
       },
-      signIn: async () => {
-        console.log('signed in');
-
-        const auth_token = await Store.getState().Reducer.ACCESS_TOKEN;
-        dispatch({ type: 'SIGN_IN', token: auth_token });
+      signIn: async (token: string) => {
+        console.log('signed in with token');
+        await EncryptedStorage.setItem('@REFRESH_TOKEN', token);
+        dispatch({ type: 'SIGN_IN', token: token });
       },
       signOut: async () => {
         try {
@@ -498,9 +505,15 @@ const App: React.FC = () => {
           await EncryptedStorage.removeItem('@BIOMETRIC_KEY');
           dispatch({ type: 'SIGN_OUT', token: null, unlock: true });
         } catch (error) {
-          console.log('error:', error);
-
           console.log('error occur to clear EncryptedStorage');
+        }
+      },
+      finishIntro: async () => {
+        try {
+          await EncryptedStorage.setItem('@NEW_USER', 'true');
+          dispatch({ type: 'FINISH_INTRO' });
+        } catch (error) {
+          console.log('Error finishing intro:', error);
         }
       },
     }),
@@ -521,7 +534,7 @@ const App: React.FC = () => {
     <SafeAreaProvider>
       <AuthContext.Provider value={authContext}>
         <NavigationContainer ref={navigationRef}>
-          {/* {state.isLoading == false &&
+          {state.isLoading == false &&
             (state.appInstallationStatus == null ? (
               <IntroductionStack />
             ) : state.unlock == true ? (
@@ -531,9 +544,8 @@ const App: React.FC = () => {
                 <SignInStack />
               )
             ) : (
-              <SignInStack />
-            ))} */}
-            <SignUpStack />
+              <SignInStack /> // Fallback or check logic? The original logic had logic here.
+            ))}
         </NavigationContainer>
 
         <Toast
