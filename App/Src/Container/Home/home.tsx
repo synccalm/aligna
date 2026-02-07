@@ -18,8 +18,13 @@ import {
   StyleSheet,
   Animated,
   Easing,
-  Dimensions
+  Dimensions,
+  Modal,
+  Alert,
+  Platform,
+  ActivityIndicator
 } from 'react-native';
+
 import { SwiperFlatList } from 'react-native-swiper-flatlist';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
@@ -165,11 +170,151 @@ const AnimatedIconStack = ({
   );
 };
 
+export const SUBSCRIPTION_IDS = {
+  monthly: 'aligna.pro.monthly',
+  yearly: 'aligna.pro.yearly',
+};
+
+
+// -- DUMMY DATA FOR IAP --
+const MOCK_PRODUCTS = [
+  {
+    productId: 'aligna.pro.monthly',
+    title: 'Monthly Subscription',
+    price: '₹29',
+    description: 'Billed monthly',
+    introPrice: null
+  },
+  {
+    productId: 'aligna.pro.yearly',
+    title: 'Yearly Subscription',
+    price: '₹99',
+    description: 'Billed yearly',
+    introPrice: '7 Days Free Trial'
+  }
+];
+
+const SubscriptionModal = ({ visible, onClose, onPurchase }: { visible: boolean; onClose: () => void; onPurchase: (sku: string) => void }) => {
+  const [loadingSku, setLoadingSku] = useState<string | null>(null);
+
+  const handleBuy = (sku: string) => {
+    setLoadingSku(sku);
+    onPurchase(sku);
+    // Reset loading state is handled by parent or validated there, 
+    // but for mock UI perception we can clear it if needed or let parent close modal
+    setTimeout(() => setLoadingSku(null), 2000);
+  };
+
+  return (
+    <Modal
+      animationType="slide"
+      transparent={true}
+      visible={visible}
+      onRequestClose={onClose}
+    >
+      <View style={{ flex: 1, backgroundColor: 'rgba(0,0,0,0.5)', justifyContent: 'flex-end' }}>
+        <View style={{ backgroundColor: '#FFFEFC', borderTopLeftRadius: 30, borderTopRightRadius: 30, padding: 24, paddingBottom: 50, minHeight: '60%' }}>
+          {/* Close Button */}
+          {/* <TouchableOpacity onPress={onClose} style={{ alignSelf: 'flex-end', padding: 8 }}>
+            <Icon name="close" size={24} color={COLORS.CHARCOL} />
+          </TouchableOpacity> */}
+
+          <View style={{ alignItems: 'center', marginBottom: 24 }}>
+            <View style={{ padding: 16, backgroundColor: '#F3E5F5', borderRadius: 20, marginBottom: 16 }}>
+              <Icon name="dazzle" size={48} color="#8E24AA" />
+            </View>
+            <Text style={{ fontFamily: 'Rubik-Medium', fontSize: 24, color: '#333', textAlign: 'center', marginBottom: 8 }}>
+              Unlock Aligna Premium
+            </Text>
+            <Text style={{ fontFamily: 'Rubik-Regular', fontSize: 14, color: '#666', textAlign: 'center', paddingHorizontal: 20, lineHeight: 20 }}>
+              Prioritize intuition over interruption. Provides continued access to all features of Aligna.
+            </Text>
+          </View>
+
+          {/* Features List */}
+          <View style={{ marginBottom: 32 }}>
+            {[
+              'A distraction-free experience',
+              'Continued access to all future updates'
+            ].map((feature, index) => (
+              <View key={index} style={{ flexDirection: 'row', alignItems: 'center', marginBottom: 12, paddingHorizontal: 16 }}>
+                <Icon name="tick-circle-green" size={18} color="#4CAF50" />
+                <Text style={{ fontFamily: 'Rubik-Regular', fontSize: 14, color: '#444', marginLeft: 12 }}>{feature}</Text>
+              </View>
+            ))}
+          </View>
+
+          {/* Subscription Options */}
+          {MOCK_PRODUCTS.map((product: any) => (
+            <TouchableOpacity
+              key={product.productId}
+              activeOpacity={0.8}
+              onPress={() => handleBuy(product.productId)}
+              style={{
+                backgroundColor: product.productId.includes('premium') ? '#1D3639' : '#FFF',
+                paddingVertical: 16,
+                borderRadius: 16,
+                marginBottom: 12,
+                borderWidth: product.productId.includes('premium') ? 0 : 2,
+                borderColor: '#1D3639',
+                flexDirection: 'row',
+                justifyContent: 'space-between',
+                paddingHorizontal: 24,
+                alignItems: 'center',
+                shadowColor: "#000",
+                shadowOffset: {
+                  width: 0,
+                  height: 4,
+                },
+                shadowOpacity: 0.1,
+                shadowRadius: 8.0,
+                elevation: 4,
+              }}
+            >
+              <View>
+                <Text style={{ fontFamily: 'Rubik-Medium', fontSize: 16, color: product.productId.includes('premium') ? '#FFF' : '#1D3639' }}>{product.title}</Text>
+                {product.introPrice && <Text style={{ fontFamily: 'Rubik-Regular', fontSize: 12, color: '#B2DFDB' }}>{product.introPrice}</Text>}
+              </View>
+
+              {loadingSku === product.productId ? (
+                <ActivityIndicator color={product.productId.includes('premium') ? "#FFF" : "#1D3639"} />
+              ) : (
+                <Text style={{ fontFamily: 'Rubik-Bold', fontSize: 16, color: product.productId.includes('premium') ? '#FFF' : '#1D3639' }}>{product.price}</Text>
+              )}
+            </TouchableOpacity>
+          ))}
+
+
+          <Text style={{ fontFamily: 'Rubik-Regular', fontSize: 10, color: '#999', textAlign: 'center', marginTop: 16 }}>
+            Recurring billing. Cancel anytime.
+          </Text>
+
+        </View>
+      </View>
+    </Modal>
+  )
+}
+
 export default function Home(): React.JSX.Element {
   // navigation declaration
   const navigation = useNavigation<NavigationType>();
   const isFocused = useIsFocused();
   const [greeting, setGreeting] = useState('Good evening!');
+  const [showModal, setShowModal] = useState(true);
+
+  // --- DUMMY IAP HANDLER ---
+  const handlePurchase = async (sku: string) => {
+    // Simulate API call
+    console.log('Purchasing SKU:', sku);
+
+    setTimeout(() => {
+      Alert.alert(
+        'Aligna Premium',
+        'Thank you for subscribing! Your journey to alignment begins now.',
+        [{ text: "OK", onPress: () => setShowModal(false) }]
+      );
+    }, 1500);
+  };
 
   // Brain Storm State
   const [brainStormQuote] = useState(() => BRAIN_STORM_QUOTES[Math.floor(Math.random() * BRAIN_STORM_QUOTES.length)]);
@@ -238,6 +383,21 @@ export default function Home(): React.JSX.Element {
     <SafeAreaView style={[Styles.flexOne, Styles.backgroundColorPureWhite]} edges={[]}>
       {/* status bar */}
       <StatusBar barStyle={'light-content'} translucent backgroundColor={'transparent'} />
+
+      <SubscriptionModal
+        visible={showModal}
+        onClose={() => setShowModal(false)}
+        onPurchase={handlePurchase}
+      />
+
+      {/* Trigger button for testing */}
+      <TouchableOpacity
+        style={{ position: 'absolute', top: 50, right: 20, zIndex: 9999, padding: 8, backgroundColor: 'rgba(255,255,255,0.2)', borderRadius: 20 }}
+        onPress={() => setShowModal(true)}
+      >
+        <Icon name="dazzle" size={24} color="#FFF" />
+      </TouchableOpacity>
+
 
       <ScrollView
         style={[Styles.flexGrowOne]}
@@ -388,11 +548,11 @@ export default function Home(): React.JSX.Element {
               </Text>
             </View>
           </View>
-          
+
           <View style={[Styles.paddingHorizontal24]}>
-              <Text style={[Styles.rubicMedium, { fontSize: 14, color: '#333' }]}>
-                  Explore Paths
-              </Text>
+            <Text style={[Styles.rubicMedium, { fontSize: 14, color: '#333' }]}>
+              Explore Paths
+            </Text>
           </View>
 
           {/* Manifestation Dashboard Grid */}
@@ -437,11 +597,11 @@ export default function Home(): React.JSX.Element {
               );
             })}
           </View>
-          
-           <View style={[Styles.paddingHorizontal24, Styles.marginBottom16]}>
-              <Text style={[Styles.rubicMedium, { fontSize: 14, color: '#333' }]}>
-                  Dream It. Live It.
-              </Text>
+
+          <View style={[Styles.paddingHorizontal24, Styles.marginBottom16]}>
+            <Text style={[Styles.rubicMedium, { fontSize: 14, color: '#333' }]}>
+              Dream It. Live It.
+            </Text>
           </View>
           <CarouselCS />
 

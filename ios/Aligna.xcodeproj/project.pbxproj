@@ -19,6 +19,7 @@
 		189AFA5A2F3511E80089B2EE /* Rubik-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 189AFA512F3511E80089B2EE /* Rubik-SemiBold.ttf */; };
 		189AFA5B2F3511E80089B2EE /* Rubik-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 189AFA4E2F3511E80089B2EE /* Rubik-Bold.ttf */; };
 		189AFA602F3523800089B2EE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 189AFA5F2F3523800089B2EE /* GoogleService-Info.plist */; };
+		189AFA622F37722D0089B2EE /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 189AFA612F37722D0089B2EE /* StoreKit.framework */; };
 		761780ED2CA45674006654EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 761780EC2CA45674006654EE /* AppDelegate.swift */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		FA1CBA464C87ABA1496E2511 /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB81A68108700A75B9A /* PrivacyInfo.xcprivacy */; };
@@ -40,6 +41,7 @@
 		189AFA512F3511E80089B2EE /* Rubik-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Rubik-SemiBold.ttf"; sourceTree = "<group>"; };
 		189AFA5F2F3523800089B2EE /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		189AFA602F3735490089B2EE /* Aligna.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Aligna.entitlements; path = Aligna/Aligna.entitlements; sourceTree = "<group>"; };
+		189AFA612F37722D0089B2EE /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		3618E72ECCC5FFC1FF065F26 /* Pods-Aligna.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Aligna.release.xcconfig"; path = "Target Support Files/Pods-Aligna/Pods-Aligna.release.xcconfig"; sourceTree = "<group>"; };
 		6F4523A6F24AE10F77FCB808 /* Pods_Aligna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Aligna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		761780EC2CA45674006654EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Aligna/AppDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +56,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0461D18CED9738CA49810D59 /* Pods_Aligna.framework in Frameworks */,
+				189AFA622F37722D0089B2EE /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +97,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				189AFA612F37722D0089B2EE /* StoreKit.framework */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				6F4523A6F24AE10F77FCB808 /* Pods_Aligna.framework */,
 			);
